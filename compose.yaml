@@ -1,0 +1,8 @@
+﻿services:
+  salesprocessor:
+    image: salesprocessor
+    build:
+      context: .
+      dockerfile: SalesProcessor/Dockerfile
+    ports:
+      - "8080:8080"
