@@ -17,6 +17,11 @@ The goal of the project is to create a Web API that can parse a sales record fil
 - Parsing: The file is parsed into an object, and the necessary fields are extracted and processed for analysis.
 - Calculation: The API calculates the **median unit cost**, the **most common region**, **date difference**s, and **total revenue**.
 
+# Design decisions
+
+Check the project's [Wiki](https://github.com/michelpl/orders-processor/wiki/Design-Justifications) for more details.
+
+
 # Api documentation
 [Api documentation](https://documenter.getpostman.com/view/1954140/2sAYJ7fJow)
 
