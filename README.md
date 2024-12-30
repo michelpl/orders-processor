@@ -92,6 +92,8 @@ Run the main project
   http://localhost:5012/api/v1
 ```
 
+![img_1.png](img_1.png)
+
 ## Consuming the API
 
 Run the API collection directly in your Postman app by clicking the button below:
