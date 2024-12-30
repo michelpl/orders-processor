@@ -1,6 +1,6 @@
-namespace SalesProcessor.Domain.Entities;
+namespace OrdersProcessor.Domain.Entities;
 
-public class SalesSummary
+public class OrdersSummary
 {
     public decimal MedianUnitCost { get; set; }
     public string MostCommonRegion { get; set; }

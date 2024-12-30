@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesProcessor", "SalesProcessor\SalesProcessor.csproj", "{6C88E8EE-F4DD-494C-86AC-4B7CA1B6FD37}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrdersProcessor", "OrdersProcessor\OrdersProcessor.csproj", "{6C88E8EE-F4DD-494C-86AC-4B7CA1B6FD37}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{53590227-F02D-46E5-A32A-BF8825C8E14D}"
 	ProjectSection(SolutionItems) = preProject

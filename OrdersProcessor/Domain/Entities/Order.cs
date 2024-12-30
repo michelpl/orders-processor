@@ -1,4 +1,4 @@
-public class Sale
+public class Order
 {
     public string Region { get; set; }
     public string Country { get; set; }

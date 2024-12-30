@@ -1,6 +1,6 @@
-using SalesProcessor.Application.Common;
+using OrdersProcessor.Application.Common;
 
-namespace SalesProcessor.Infrastructure.Middlewares;
+namespace OrdersProcessor.Infrastructure.Middlewares;
 
 public class GlobalExceptionMiddleware
 {

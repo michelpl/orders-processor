@@ -1,15 +1,15 @@
 using System.Globalization;
 using CsvHelper;
 using CsvHelper.Configuration;
-using SalesProcessor.Domain.Entities;
-using SalesProcessor.Domain.Interfaces;
+using OrdersProcessor.Domain.Entities;
+using OrdersProcessor.Domain.Interfaces;
 
-namespace SalesProcessor.Infrastructure.FileParsing;
+namespace OrdersProcessor.Infrastructure.FileParsing;
 
-public class CsvSalesParser : ICsvSalesParser
+public class CsvOrdersParser : ICsvOrdersParser
 {
     private readonly CsvConfiguration _csvConfiguration;
-    public CsvSalesParser()
+    public CsvOrdersParser()
     {
         _csvConfiguration = new CsvConfiguration(CultureInfo.InvariantCulture)
         {
@@ -17,7 +17,7 @@ public class CsvSalesParser : ICsvSalesParser
         };
     }
 
-    public async Task<IAsyncEnumerable<Sale>> ParseAsync(IFormFile file)
+    public async Task<IAsyncEnumerable<Order>> ParseAsync(IFormFile file)
     {
         try
         {
@@ -28,8 +28,8 @@ public class CsvSalesParser : ICsvSalesParser
             var reader = new StreamReader(stream);
             var csv = new CsvReader(reader, _csvConfiguration);
 
-            csv.Context.RegisterClassMap<SaleColumnsMap>();
-            return csv.GetRecordsAsync<Sale>(); 
+            csv.Context.RegisterClassMap<OrderColumnsMap>();
+            return csv.GetRecordsAsync<Order>(); 
         }
         catch (HeaderValidationException e)
         {

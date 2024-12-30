@@ -1,9 +1,10 @@
 using Asp.Versioning;
-using SalesProcessor.Application.Services;
-using SalesProcessor.Domain.Interfaces;
-using SalesProcessor.Infrastructure.FileParsing;
+using OrdersProcessor.Application.Helpers;
+using OrdersProcessor.Application.Services;
+using OrdersProcessor.Domain.Interfaces;
+using OrdersProcessor.Infrastructure.FileParsing;
 
-namespace SalesProcessor;
+namespace OrdersProcessor;
 
 public class Program
 {
@@ -22,19 +23,22 @@ public class Program
             options.ReportApiVersions = true; 
         });
         
-        builder.Services.AddScoped<ICsvSalesParser, CsvSalesParser>();
-        builder.Services.AddScoped<ISalesProcessingService, SalesProcessingService>();
+        builder.Services.AddScoped<ICsvOrdersParser, CsvOrdersParser>();
+        builder.Services.AddScoped<IOrdersProcessingService, OrdersProcessingService>();
+        builder.Services.AddScoped<IMedianCalculator, MedianCalculator>();
+        builder.Services.AddScoped<IRegionAnalyzer, RegionAnalyzer>();
+        builder.Services.AddScoped<IOrdersProcessingService, OrdersProcessingService>();
 
         var app = builder.Build();
 
         app.UseMiddleware<Infrastructure.Middlewares.GlobalExceptionMiddleware>();
-        
-        //Removing  if (app.Environment.IsDevelopment()) code for
-        // interviewers to see the swagger documentation
-        app.UseSwagger();
-        app.UseSwaggerUI();
-        
 
+        if (app.Environment.IsDevelopment())
+        {
+            app.UseSwagger();
+            app.UseSwaggerUI();
+        }
+        
         app.UseHttpsRedirection();
 
         app.UseAuthorization();

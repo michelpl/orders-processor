@@ -1,10 +1,10 @@
 using CsvHelper.Configuration;
 
-namespace SalesProcessor.Domain.Entities;
+namespace OrdersProcessor.Domain.Entities;
 
-public sealed class SaleColumnsMap : ClassMap<Sale>
+public sealed class OrderColumnsMap : ClassMap<Order>
 {
-    public SaleColumnsMap()
+    public OrderColumnsMap()
     {
         Map(m => m.Region).Name("region");
         Map(m => m.Country).Name("country");

@@ -1,4 +1,4 @@
-namespace SalesProcessor.Application.Common;
+namespace OrdersProcessor.Application.Common;
 
 public class ErrorResponse  
 {
