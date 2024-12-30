@@ -4,13 +4,13 @@ namespace OrdersProcessor.Application.Helpers;
 
 public class MedianCalculator : IMedianCalculator
 {
-    public decimal Calculate(List<decimal> values)
+    public decimal Calculate(IEnumerable<decimal> values)
     {
-        var count = values.Count;
-
-        if (values == null || count == 0)
+        if (values == null || values.Count() == 0)
             throw new ArgumentException("Values collection cannot be null or empty");
-
+        
+        var count = values.Count();
+        
         var sortedValues = values.OrderBy(v => v).ToList();
 
         if (count % 2 == 0)

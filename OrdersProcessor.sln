@@ -7,6 +7,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		compose.yaml = compose.yaml
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrdersProcessor.UnitTests", "OrdersProcessor.UnitTests\OrdersProcessor.UnitTests.csproj", "{3C15BD88-DD9F-48A5-A01B-A870D84697F6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,5 +19,9 @@ Global
 		{6C88E8EE-F4DD-494C-86AC-4B7CA1B6FD37}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6C88E8EE-F4DD-494C-86AC-4B7CA1B6FD37}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C88E8EE-F4DD-494C-86AC-4B7CA1B6FD37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C15BD88-DD9F-48A5-A01B-A870D84697F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C15BD88-DD9F-48A5-A01B-A870D84697F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C15BD88-DD9F-48A5-A01B-A870D84697F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C15BD88-DD9F-48A5-A01B-A870D84697F6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

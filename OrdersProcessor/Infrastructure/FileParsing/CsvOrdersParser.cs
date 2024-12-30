@@ -2,6 +2,7 @@ using System.Globalization;
 using CsvHelper;
 using CsvHelper.Configuration;
 using OrdersProcessor.Domain.Entities;
+using OrdersProcessor.Domain.Exceptions;
 using OrdersProcessor.Domain.Interfaces;
 
 namespace OrdersProcessor.Infrastructure.FileParsing;
@@ -16,7 +17,6 @@ public class CsvOrdersParser : ICsvOrdersParser
             PrepareHeaderForMatch = args => args.Header.ToLowerInvariant()
         };
     }
-
     public async Task<IAsyncEnumerable<Order>> ParseAsync(IFormFile file)
     {
         try
@@ -24,22 +24,23 @@ public class CsvOrdersParser : ICsvOrdersParser
             var stream = new MemoryStream();
             await file.CopyToAsync(stream);
             stream.Position = 0;
-            
+        
             var reader = new StreamReader(stream);
             var csv = new CsvReader(reader, _csvConfiguration);
 
             csv.Context.RegisterClassMap<OrderColumnsMap>();
-            return csv.GetRecordsAsync<Order>(); 
+            var records = csv.GetRecordsAsync<Order>();
+            return records;
         }
-        catch (HeaderValidationException e)
+        catch (HeaderValidationException)
         {
-            Console.WriteLine(e.Message);
+            // Repassa a exceção diretamente
             throw;
         }
         catch (Exception e)
         {
-            Console.WriteLine("An error occurred while processing the file." + e.Message);
-            throw;
+            throw new InvalidFileException("An error occurred while processing the file. " + e.Message);
         }
     }
+
 }

@@ -10,7 +10,7 @@ public class OrdersProcessingService(
 {
     public async Task<OrdersSummary> GetOrdersSummary(IAsyncEnumerable<Order> orderList)
     {
-        if (orderList == null) throw new ArgumentNullException(nameof(orderList));
+        ArgumentNullException.ThrowIfNull(orderList);
 
         var unitCosts = new List<decimal>();
         var regions = new List<string>();
