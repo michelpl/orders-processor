@@ -122,14 +122,14 @@ You can check the test results in your terminal:
 
 ![img.png](img.png)
 
-## Function tests on Postman
+## Functional tests on Postman
 
 ![image](https://github.com/user-attachments/assets/1cc8dc23-369d-424b-aa96-e0c16aa22143)
 
 
 ## Performance tests
 
-[Check real deshboard]([url](https://www.postman.com/crimson-satellite-2744/workspace/hiring-processes/run/performance/1efc702c-267f-46b0-9ea5-f6fe009669aa?static=true))
+[Check real deshboard](https://www.postman.com/crimson-satellite-2744/workspace/hiring-processes/run/performance/1efc702c-267f-46b0-9ea5-f6fe009669aa?static=true)
 
 ![image](https://github.com/user-attachments/assets/71a073dd-9dfa-4e97-9519-9ff214ff27b8)
 
